@@ -1,0 +1,76 @@
+// 1.launch the url 
+Url=> https://nxtgenaiacademy.com/demo-site/
+
+// 2.Title Validation
+Title=> Register For Demo
+
+3. First Name
+4.Last Name
+5.Gender
+6.Address
+7.Street Address
+8.Apt, Suite, Bldg. (optional)
+9.city
+10.State / Province / Region
+11.Postal / Zip Code
+12.country
+13.email
+14.Date of Demo
+15.convenient time
+16.Mobile Number
+17.course interested-2
+18.Enter your query
+19.for verification retrieve value displayed for ex:99 and enter the same
+20.submit button
+21.validate the successful message
+
+
+// Declaring the WebElement object
+WebElement countryDropDown = driver.findElement(By.id("vfb-13-
+country"));
+// Verify the Country DropDown is displayed
+if(countryDropDown.isDisplayed()) {
+System.out.println("Country DropDown is displayed");
+}
+else
+{
+System.out.println("Country DropDown is not displayed");
+}
+// Verify the Country DropDown is enabled
+if(countryDropDown.isEnabled()) {
+System.out.println("Country DropDown is enabled");
+}
+else
+{
+System.out.println("Country DropDown is not enabled");
+}
+// Create the select object to select value from dropdown
+Select cDropDown = new Select(countryDropDown);
+// Dropdown values to be selected 
+String listValueOne = "India";
+
+
+// Always mention the selection value inside the if statement
+if(countryDropDown.isEnabled()) {
+ // Select using VisibleText
+cDropDown.selectByVisibleText(listValueOne);
+System.out.println(listValueOne + " is selected");
+Thread.sleep(3000);
+// Select using value
+cDropDown.selectByValue(listValueTwo);
+System.out.println(listValueTwo + " is selected");
+Thread.sleep(3000);
+//Select using index - Number 9 means Australia in the dropdown 
+list
+cDropDown.selectByIndex(listValueThree); 
+// Drawback - Display message needs to be hard coded.
+System.out.println("Australia is selected"); 
+}
+else
+{
+System.out.println("Country DropDown is not enabled");
+}
+Thread.sleep(3000);
+// Close the application
+driver.close();
+}
